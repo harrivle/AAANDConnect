@@ -1,0 +1,15 @@
+{
+	"alumni": [
+		{
+			"name": "Angel Mira",
+			"city": "Durham",
+			"major": "Political Science"
+		},
+
+		{
+			"name": "Joon Orione-Kim",
+			"city": "Rochester",
+			"major": "BFA Design"
+		}
+	]
+}
