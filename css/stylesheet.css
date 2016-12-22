@@ -21,11 +21,11 @@ body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
 }
-.footer {
+.panel-footer {
   position: absolute;
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
-  height: 70px;
+  height: 90px;
   background-color: #f5f5f5;
 }
