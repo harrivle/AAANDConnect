@@ -4,15 +4,20 @@
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>AAA Connect | Home</title>
+		<title>AAA Connect | App</title>
 		<meta name="keywords" content="AAA, Asian, American, Association, ND, Notre, Dame" />
 		<meta name="author" content="Anthony Luc (2016)" />
 		<!-- here we need to link AAA's icon to be shown in the tab -->
 		<link rel="icon" href="#">
 
+		<!-- Firebase -->
+		<script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+		<script src="js/aaandconnectfirebase.js"></script>
 		<!-- this is for bootstrap-->
 		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
-		<!-- this is for the font -->
+        <!-- this is for the font-awesome icons-->
+		<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+        <!-- this is for the font -->
 		<link rel="stylesheet" href="css/stylesheet.css" />
 	</head>
 
@@ -33,32 +38,40 @@
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      <ul class="nav navbar-nav">
-		        <li><a href="index.html">HOME<span class="sr-only">(current)</span></a></li>
-		        <li><a href="about.html">ABOUT</a></li>
+                  <li><a href="#"><i class="fa fa-home"></i>&nbsp;Main<span class="sr-only">(current)</span></a></li>
+                  <li><a href="map.html"><i class="fa fa-globe"></i>&nbsp;Map</a></li>
+				  <li><a href="account-settings.html"><i class="fa fa-cog"></i>&nbsp;Account Settings</a></li>
+                  <li><a href="#" id="quickstart-sign-in"><i class="fa fa-sign-out"></i>&nbsp;Login</a></li>
 		      </ul>
 		    </div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->
 		</nav>
 
 		<div class="main">
-			<div class="container" style="padding-bottom: 20px";>
-				<div class="col-md-12">
-					<p>Please select if you are an undergraduate student or an alumni. // login instead?</p>
+			<div class="container" style="padding-top: 20px;">
+				<div class="page-header col-sm-12">
+					<h1>Main</h1>
 				</div>
-				<div class="col-md-6" style="padding-top: 20px;">
-					<a href="student.html" title="student"><button type="button" class="btn btn-info btn-lg btn-block">Student</button></a>
-				</div>
-				<div class="col-md-6" style="padding-top: 20px;">
-					<a href="alumni.html" title="alumni"><button type="button" class="btn btn-info btn-lg btn-block">Alumni</button></a>
-				</div>
+
+
+
+				<!-- Container where we'll display the user details -->
+	          <div class="quickstart-user-details-container">
+	            Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
+	            <div>Firebase auth <code>currentUser</code> object value:</div>
+	            <pre><code id="quickstart-account-details">null</code></pre>
+	            <div>Google OAuth Access Token:</div>
+	            <pre><code id="quickstart-oauthtoken">null</code></pre>
 			</div>
+
+
 		</div>
 
 		<!-- footer with copyright and button links -->
-        <div class="panel-footer">
+		<div class="panel-footer">
 			<div class="container-fluid">
 				<div class="col-sm-9">
-					<h4>Contact:&nbsp;<a href="mailto:aaa@nd.edu">AAA</a> | <a href="mailto:aluc@nd.edu">Webmaster</a></h4>
+					<h4>Contact:&nbsp;<a href="mailto:aaa@nd.edu">AAA</a> | <a href="mailto:aluc@nd.edu">Connect Team</a></h4>
 					<h5><p>Copyright &copy; Asian American Association of Notre Dame</p></h5>
 				</div>
 				<div class="col-sm-3" style="padding-top: 10px;">
@@ -72,5 +85,7 @@
 		<script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
 		<script type="text/javascript" src="bower_components/fastclick/lib/fastclick.js"></script>
 		<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+		<script type="text/javascript" src="js/script.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
 	</body>
 </html>
