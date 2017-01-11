@@ -1,9 +1,9 @@
 /**
  * Created by anthonyluc on 1/9/17.
+ * Adapted Google Quickstart
  */
 
 // Function called when clicking the Login/Logout button.
-// Google Quickstart
 // [START buttoncallback]
     function toggleSignIn() {
       if (!firebase.auth().currentUser) {
@@ -63,25 +63,15 @@
       firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
           // User is signed in.
-          var displayName = user.displayName;
-          var email = user.email;
-          var emailVerified = user.emailVerified;
-          var photoURL = user.photoURL;
-          var isAnonymous = user.isAnonymous;
-          var uid = user.uid;
-          var providerData = user.providerData;
           // [START_EXCLUDE]
           document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
           document.getElementById('quickstart-sign-in').textContent = 'LOGOUT';
-          document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
           // [END_EXCLUDE]
         } else {
           // User is signed out.
           // [START_EXCLUDE]
           document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
           document.getElementById('quickstart-sign-in').textContent = 'LOGIN';
-          document.getElementById('quickstart-account-details').textContent = 'null';
-          document.getElementById('quickstart-oauthtoken').textContent = 'null';
           // [END_EXCLUDE]
         }
         // [START_EXCLUDE]
@@ -90,6 +80,6 @@
       });
 	  // [END authstatelistener]
 
+      // Listen for login button
       document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
-
     }

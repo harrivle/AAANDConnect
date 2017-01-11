@@ -53,47 +53,66 @@
 					<h1>Main</h1>
 				</div>
 
-				<div class="container">
+				<!-- Hidden student form -->
+				<div hidden class="container" id="student-form">
 
 				</div>
 
-				<form>
+				<!-- Hidden alumni form -->
+				<div hidden class="container" id="alumni-form">
+
+				</div>
+
+				<!-- Test form -->
+				<form class="form-horizontal">
+					<div class="form-group">
+						<label for="name">Name</label>
+					    <input type="text" class="form-control" id="name" placeholder="Jane Doe">
+					</div>
+					<div class="form-group">
+						<label for="career1">Indicate your first career.</label>
+						<select class="form-control" id="career1">
+							<option>Not Selected</option>
+							<option>Doctor</option>
+							<option>Lawyer</option>
+							<option>Dentist</option>
+							<option>Psh there can't be any other option</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="career2">Indicate your second career.</label>
+						<select class="form-control" id="career2">
+							<option>Not Selected</option>
+							<option>Doctor</option>
+							<option>Lawyer</option>
+							<option>Dentist</option>
+							<option>Psh there can't be any other option</option>
+						</select>
+					</div>
 					<div class="form-group">
 						<label for="numStudents">Choose the maximum number of students you would like to mentor.</label>
 						<select class="form-control" id="numStudents">
-						  <option>1</option>
-						  <option>2</option>
-						  <option>3</option>
-						  <option>4</option>
-						  <option>5</option>
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+							<option>6</option>
+							<option>7</option>
 						</select>
 					</div>
+					<div class="form-group">
+						<label for="alumniBio">Please write a short bio for students to read.</label>
+						<textarea class="form-control" rows="5" id="alumniBio"></textarea>
+					</div>
 				</form>
+
 				<button type="button" class="btn btn-primary" id="submitBtn">Submit</button>
 
 				<!-- Container where we'll display the user details -->
 	          <div class="quickstart-user-details-container">
 	            Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
 	            <div>Firebase auth <code>currentUser</code> object value:</div>
-	            <pre><code id="quickstart-account-details">null</code></pre>
-	            <div>Google OAuth Access Token:</div>
-	            <pre><code id="quickstart-oauthtoken">null</code></pre>
-			</div>
-
-
-		</div>
-
-		<!-- footer with copyright and button links -->
-		<div class="panel-footer">
-			<div class="container-fluid">
-				<div class="col-sm-9">
-					<h4>Contact:&nbsp;<a href="mailto:aaa@nd.edu">AAA</a> | <a href="mailto:aluc@nd.edu">Connect Team</a></h4>
-					<h5><p>Copyright &copy; Asian American Association of Notre Dame</p></h5>
-				</div>
-				<div class="col-sm-3" style="padding-top: 10px;">
-					<il><a href="https://www.facebook.com/aaa.of.nd" title="facebook" target="_blank"><img src="social/facebook.png" alt="facebook"></a>&nbsp;</il>
-					<il><a href="https://www.nd.edu" title="nd" target="_blank"><img src="img/nd-logo.png" alt="notre-dame-website"></a></il>
-				</div>
 			</div>
 		</div>
 
