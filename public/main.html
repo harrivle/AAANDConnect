@@ -38,10 +38,10 @@
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      <ul class="nav navbar-nav">
-                  <li><a href="#"><i class="fa fa-home"></i>&nbsp;Main<span class="sr-only">(current)</span></a></li>
-                  <li><a href="map.html"><i class="fa fa-globe"></i>&nbsp;Map</a></li>
-				  <li><a href="account-settings.html"><i class="fa fa-cog"></i>&nbsp;Account Settings</a></li>
-                  <li><a href="#" id="quickstart-sign-in"><i class="fa fa-sign-out"></i>&nbsp;Login</a></li>
+                  <li><a href="#"><i class="fa fa-home"></i>&nbsp;MAIN<span class="sr-only">(current)</span></a></li>
+                  <li><a href="map.html"><i class="fa fa-globe"></i>&nbsp;MAP</a></li>
+				  <li><a href="account-settings.html"><i class="fa fa-cog"></i>&nbsp;ACCOUNT SETTINGS</a></li>
+                  <li><a href="#" id="quickstart-sign-in"><i class="fa fa-sign-out"></i>&nbsp;</a></li>
 		      </ul>
 		    </div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->
@@ -53,7 +53,23 @@
 					<h1>Main</h1>
 				</div>
 
+				<div class="container">
 
+				</div>
+
+				<form>
+					<div class="form-group">
+						<label for="numStudents">Choose the maximum number of students you would like to mentor.</label>
+						<select class="form-control" id="numStudents">
+						  <option>1</option>
+						  <option>2</option>
+						  <option>3</option>
+						  <option>4</option>
+						  <option>5</option>
+						</select>
+					</div>
+				</form>
+				<button type="button" class="btn btn-primary" id="submitBtn">Submit</button>
 
 				<!-- Container where we'll display the user details -->
 	          <div class="quickstart-user-details-container">
@@ -85,7 +101,6 @@
 		<script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
 		<script type="text/javascript" src="bower_components/fastclick/lib/fastclick.js"></script>
 		<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-		<script type="text/javascript" src="js/script.js"></script>
 		<script type="text/javascript" src="js/main.js"></script>
 	</body>
 </html>
