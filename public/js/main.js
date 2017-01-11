@@ -3,7 +3,7 @@
  * Has main.html function calls
  */
 
-/* Reference to use currentUser
+/** Reference to info from currentUser
 displayName = user.displayName;
 email = user.email;
 emailVerified = user.emailVerified;
@@ -14,47 +14,36 @@ providerData = user.providerData;
 */
 
 // Get scripts
-$.getScript("js/script.js");
-$.getScript("js/write.js");
+$.getScript("js/script.js"); // Loads script for Google login quickstart authentication.
 
-// Get a reference to the database service
+// Get a reference to the database service.
 var database = firebase.database();
 
-// Note for later
-// $("*")  selects all html documents...perhaps use when login/out can show/hide certain tabs
-
-
-//getUserInput(name, callback) {}
-
-
-// Listen for submit button.
+// Listener for submit button.
 document.getElementById('submitBtn').addEventListener('click', writeFirebase);
-
 
 // Write data to firebase.
 function writeFirebase() {
-    // Listen for auth state changes.
+    // Listener for authentication state change.
     firebase.auth().onAuthStateChanged(function(user, currentUser) {
     if (user) {
         // User is signed in.
-
         // Get info from documents.
         var name = $("#name").val();
         var numStudents = $("#numStudents").val();
         var career1 = $("#career1").val();
         var career2 = $("#career2").val();
-        var alumniBio = $("#alumniBio").val();
+        var bio = $("#bio").val();
 
-        // Check for validity of career choice.
-        // if ()
+        // TODO: Check for validity of career choice.
 
-        // Write to firebase
+        // Write to firebase.
         firebase.database().ref('alumni/' + user.uid).set({
             name: name,
             numStudents: numStudents,
             career1: career1,
             career2: career2,
-            alumniBio: alumniBio,
+            bio: bio,
         });
         } else {
         // User is signed out.
@@ -62,6 +51,7 @@ function writeFirebase() {
     });
 }
 
+
 window.onload = function() {
-    initGoogleQS();
+    initGoogleQS(); // Run Google login quickstart from script.js
 };

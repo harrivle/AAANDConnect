@@ -10,14 +10,9 @@
 		<!-- here we need to link AAA's icon to be shown in the tab -->
 		<link rel="icon" href="#">
 
-		<!-- Firebase -->
-		<script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
-		<script src="js/aaandconnectfirebase.js"></script>
-		<!-- this is for bootstrap-->
-		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
-        <!-- this is for the font-awesome icons-->
+        <!-- this is for the font-awesome icons -->
 		<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
-        <!-- this is for the font -->
+        <!-- Primary stylesheet -->
 		<link rel="stylesheet" href="css/stylesheet.css" />
 	</head>
 
@@ -55,20 +50,20 @@
 
 				<!-- Hidden student form -->
 				<div hidden class="container" id="student-form">
-
 				</div>
 
 				<!-- Hidden alumni form -->
 				<div hidden class="container" id="alumni-form">
-
 				</div>
 
 				<!-- Test form -->
 				<form class="form-horizontal">
+					<!-- Name -->
 					<div class="form-group">
 						<label for="name">Name</label>
 					    <input type="text" class="form-control" id="name" placeholder="Jane Doe">
 					</div>
+					<!-- Careers -->
 					<div class="form-group">
 						<label for="career1">Indicate your first career.</label>
 						<select class="form-control" id="career1">
@@ -89,6 +84,7 @@
 							<option>Psh there can't be any other option</option>
 						</select>
 					</div>
+					<!-- Max number of students -->
 					<div class="form-group">
 						<label for="numStudents">Choose the maximum number of students you would like to mentor.</label>
 						<select class="form-control" id="numStudents">
@@ -101,25 +97,44 @@
 							<option>7</option>
 						</select>
 					</div>
+
+					<!-- / This implements country/state/city dropdown from location.js.
 					<div class="form-group">
-						<label for="alumniBio">Please write a short bio for students to read.</label>
-						<textarea class="form-control" rows="5" id="alumniBio"></textarea>
+						<label for="country">Country</label>
+						<select name="country" class="countries" id="countryId">
+							<option value="">Select Country</option>
+						</select>
+						<label for="state">State</label>
+						<select name="state" class="states" id="stateId">
+							<option value="">Select State</option>
+						</select>
+						<label for="city">City</label>
+						<select name="city" class="cities" id="cityId">
+							<option value="">Select City</option>
+						</select>
+					</div> -->
+
+					<!-- Short bio -->
+					<div class="form-group">
+						<label for="bio">Please write a short bio for students to read.</label>
+						<textarea class="form-control" rows="5" placeholder="Bio..." id="bio"></textarea>
 					</div>
 				</form>
 
+				<!-- Submit button -->
 				<button type="button" class="btn btn-primary" id="submitBtn">Submit</button>
 
-				<!-- Container where we'll display the user details -->
-	          <div class="quickstart-user-details-container">
-	            Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
-	            <div>Firebase auth <code>currentUser</code> object value:</div>
-			</div>
+				<!-- Display current login status and user authentication -->
+		        <div class="quickstart-user-details-container">
+		            Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
+				</div>
 		</div>
 
-		<!-- all the javascript links -->
-		<script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
-		<script type="text/javascript" src="bower_components/fastclick/lib/fastclick.js"></script>
-		<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-		<script type="text/javascript" src="js/main.js"></script>
+		<!-- Javascript links -->
+			<!-- Firebase -->
+			<script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+			<script src="js/aaandconnectfirebase.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="js/main.js"></script>
 	</body>
 </html>

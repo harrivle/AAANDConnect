@@ -36,6 +36,7 @@ To-Do:
  - ?prevent users from directly going to main.html
  - ?put limitations on the openly visible details in firebase.js
  - finalize read/write rules based on functions and use
+    - see google keep
 
 
 Future:
@@ -50,6 +51,9 @@ aaandconnect
             Name
             Occupation
             Location
+                City
+                State
+                Country
             maxNumOfStudents
     student
         uid
