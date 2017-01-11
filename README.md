@@ -1,9 +1,11 @@
 To Figure Out:
  - sometimes not properly loading javascript files?
- - How to Hosting
+ - Hide API?
+ - How to Host
     - Use ND hosting
     - Use Firebase Hosting
     - determine necessity of firebase info in html based on hosting
+ - Expiration
  - Backup of database?
  - How to Match Students and Alumni
     - user done:
@@ -18,16 +20,16 @@ To Figure Out:
     - student who become alumni
     - alumni who are no longer active
  - Account Management
-    - Managing email preferences?
-    - Deleting an account
- - Session Management
- - Ordering of pages
  - Database Setup
     - if by name, then how to resolve same names
     - perhaps then, by uid?
+ - main.html
+    - UI
+    - update user info
  - Alumni Careers
     - How many careers to let them have?
     - Drop down List of Careers
+
 
 To-Do:
  - fix login/out button with font-awesome icon
@@ -35,6 +37,12 @@ To-Do:
  - remove the unnecessary parts of the initApp in the google quickstart sign in
  - ?prevent users from directly going to main.html
  - ?put limitations on the openly visible details in firebase.js
+ - Restrict users to @nd.edu and @alumni.nd.edu
+    - ?later add smc and hocro?
+ - Algorithm and Matching
+    - weighted bipartite matching
+        - Majors --> Department ... a cloud
+        - Geography --> distance
  - finalize read/write rules based on functions and use
     - see google keep
 
@@ -45,18 +53,15 @@ Future:
 
 
 Database Structure:
-aaandconnect
     alumni
-        uid
             Name
-            Occupation
+            Careers
             Location
                 City
                 State
                 Country
             maxNumOfStudents
     student
-        uid
             Name
             Major
             Location Preference
