@@ -1,6 +1,6 @@
 {
   "rules": {
-    ".read": "auth != null",
-    ".write": "auth != null"
+    ".read": "auth.token.email.endsWith('@nd.edu') || auth.token.email.endsWith('@alumni.nd.edu')",
+    ".write": "auth.token.email.endsWith('@nd.edu') || auth.token.email.endsWith('@alumni.nd.edu')"
   }
 }

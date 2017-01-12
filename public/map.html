@@ -12,12 +12,14 @@
 
 		<!-- this is for the font-awesome icons -->
 		<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
-        <!-- Primary stylesheet -->
+		<!-- SweetAlert -->
+		<link rel="stylesheet" href="sweetalert/dist/sweetalert.css">
+		<!-- Primary stylesheet -->
 		<link rel="stylesheet" href="css/stylesheet.css" />
 	</head>
 
 	<body>
-		<!-- the fixed top nagvigation bar -->
+		<!-- the fixed top navigation bar -->
 		<nav class="navbar navbar-default navbar-fixed-top">
 		  <div class="container">
 		    <!-- Brand and toggle get grouped for better mobile display -->
@@ -35,15 +37,23 @@
 		      <ul class="nav navbar-nav">
 				  <li><a href="main.html"><i class="fa fa-home"></i>&nbsp;MAIN</a></li>
                   <li><a href="#"><i class="fa fa-globe"></i>&nbsp;MAP<span class="sr-only">(current)</span></a></li>
-                  <li><a href="account-settings.html"><i class="fa fa-cog"></i>&nbsp;ACCOUNT SETTINGS</a></li>
-                  <li><a href="#" id="quickstart-sign-in"><i class="fa fa-sign-out"></i>&nbsp;</a></li>
+				  <li class="dropdown">
+	              	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+		              <ul class="dropdown-menu">
+						<li><a href="#">Submit A Bug</a></li>
+		                <li role="separator" class="divider"></li>
+		                <li class="dropdown-header">Options</li>
+		                <li><a href="account-settings.html"><i class="fa fa-cog"></i>&nbsp;Account Settings</a></li>
+		                <li><a href="#" id="quickstart-sign-in"><i class="fa fa-sign-out"></i>&nbsp;</a></li>
+		              </ul>
+	              </li>
 		      </ul>
 		    </div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->
 		</nav>
 
 		<div class="main">
-            <div class="container" style="padding-top: 20px;">
+            <div class="container" style="padding: 20px 0;">
 				<div class="page-header col-sm-12">
 					<h1>Coming in the near future...</h1>
 				</div>
@@ -51,25 +61,16 @@
             </div>
 		</div>
 
-		<!-- footer with copyright and button links -->
-        <div class="panel-footer">
-			<div class="container-fluid">
-				<div class="col-sm-9">
-					<h4>Contact:&nbsp;<a href="mailto:aaa@nd.edu">AAA</a> | <a href="mailto:aluc@nd.edu">Connect Team</a></h4>
-					<h5><p>Copyright &copy; Asian American Association of Notre Dame</p></h5>
-				</div>
-				<div class="col-sm-3" style="padding-top: 10px;">
-					<il><a href="https://www.facebook.com/aaa.of.nd" title="facebook" target="_blank"><img src="social/facebook.png" alt="facebook"></a>&nbsp;</il>
-					<il><a href="https://www.nd.edu" title="nd" target="_blank"><img src="img/nd-logo.png" alt="notre-dame-website"></a></il>
-				</div>
-			</div>
-		</div>
-
-		<!-- Javascript links -->
-			<!-- Firebase -->
-			<script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
-			<script src="js/aaandconnectfirebase.js"></script>
+		<!-- Firebase -->
+		<script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+		<script src="js/aaandconnectfirebase.js"></script>
+		<!-- jQuery -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-		<script src="js/main.js"></script>
+		<!-- SweetAlert -->
+		<script src="sweetalert/dist/sweetalert.min.js"></script>
+		<!-- Google Login Quickstart script -->
+		<script src="js/login.js"></script>
+		<!-- Latest compiled and minified JavaScript for bootstrap (dependent on jquery) -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	</body>
 </html>

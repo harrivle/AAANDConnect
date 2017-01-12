@@ -1,11 +1,20 @@
+Implemented code:
+    JoSoWhit
+    FireBase
+    Bootstrap
+    SweetAlert
+
+Javascript dependencies:
+    main.js: jQuery and firebase
+    boostrap.min.js: jQuery
+
 To Figure Out:
  - sometimes not properly loading javascript files?
- - Hide API?
  - How to Host
     - Use ND hosting
     - Use Firebase Hosting
     - determine necessity of firebase info in html based on hosting
- - Expiration
+ - Prevent login of invalid email
  - Backup of database?
  - How to Match Students and Alumni
     - user done:
@@ -34,15 +43,13 @@ To Figure Out:
 To-Do:
  - fix login/out button with font-awesome icon
  - allow users to update info in the account settings page
- - remove the unnecessary parts of the initApp in the google quickstart sign in
- - ?prevent users from directly going to main.html
+ - prevent authentication of users of non-ND emails (although they cant use the app they are still added to the authenticated users db)
+ - ?prevent users from directly going to main.html - currently gimicky
  - ?put limitations on the openly visible details in firebase.js
  - Restrict users to @nd.edu and @alumni.nd.edu
     - ?later add smc and hocro?
- - Algorithm and Matching
-    - weighted bipartite matching
-        - Majors --> Department ... a cloud
-        - Geography --> distance
+ - !fix submit profile button and error checking!
+ - !load up user data when entering update page!
  - finalize read/write rules based on functions and use
     - see google keep
 
