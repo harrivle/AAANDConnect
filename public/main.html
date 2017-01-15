@@ -62,10 +62,17 @@
 					<div class="container" style="padding-bottom: 20px;">
 						<h5 id="current-login-email"></h5>
 					</div>
-					<!-- Button block -->
-					<div class="well center-block" style=max-width:600px>
-						<button type="button" class="btn btn-primary btn-lg btn-block" id="view-matches-btn">View Matches</button>
-						<button type="button" class="btn btn-primary btn-lg btn-block" id="update-profile-btn">Update Profile</button>
+					<!-- Student button block -->
+					<div class="student-btn-block hidden well center-block" style=max-width:600px>
+						<button type="button" class="btn btn-primary btn-lg btn-block" id="find-mentors-btn">Find Mentors</button>
+						<button type="button" class="btn btn-primary btn-lg btn-block" id="view-mentors-btn">View Mentors</button>
+						<button type="button" class="btn btn-primary btn-lg btn-block" id="update-student-btn">Update Profile</button>
+					</div>
+					<!-- Alumni button block -->
+					<div class="alumni-btn-block hidden well center-block" style=max-width:600px>
+						<button type="button" class="btn btn-primary btn-lg btn-block" id="view-mentees-btn">View Mentees</button>
+						<button type="button" class="btn btn-primary btn-lg btn-block" id="view-requests-btn">View Requests</button>
+						<button type="button" class="btn btn-primary btn-lg btn-block" id="update-alumni-btn">Update Profile</button>
 					</div>
 				</div>
 
@@ -75,24 +82,24 @@
 					<div class="container">
 						<h4 id="grad-status-form"></h4>
 						<form class="form-horizontal">
-							<div class="form-group">
+							<div class="name form-group">
 								<!-- Name -->
-								<label for="name">Name</label>
+								<label for="name">Name*</label>
 								<input type="text" class="form-control" id="name" placeholder="Jane Doe">
 							</div>
 							<div class="gradYear form-group">
-								<label for="name">Graduation Year</label>
+								<label for="name">Graduation Year*</label>
 								<input type="text" class="form-control" id="gradYear" placeholder="2017">
 							</div>
 						</form>
 					</div>
 
 					<!-- Student form -->
-					<div class="hidden container student-form">
+					<div class="update-student-form hidden container">
 						<form class="form-horizontal">
 							<!-- Majors -->
 							<div class="major1 form-group">
-								<label for="major1">First Major</label>
+								<label for="major1">First Major*</label>
 								<select class="form-control" id="major1">
 									<option>Not Selected</option>
 									<option>Business</option>
@@ -111,17 +118,15 @@
 									<option>Psh there can't be any other option</option>
 								</select>
 							</div>
-							<div class="locationPreference form-group">
-								<label for="location">Preferrerd Career Location</label>
-								<select class="form-control" id="locationPreference">
-									<option value="">Select Location</option>
-								</select>
+							<div class="locationInterest form-group">
+								<label for="location">Career Location Interest</label>
+								<input type="text" class="form-control" id="locationInterest" placeholder="e.g. West Coast">
 							</div>
 						</form>
 					</div>
 
 					<!-- Alumni form -->
-					<div class="hidden container alumni-form">
+					<div class="update-alumni-form hidden container">
 						<form class="form-horizontal">
 							<!-- Careers -->
 							<div class="form-group">
@@ -145,7 +150,7 @@
 								</select>
 							</div>
 							<!-- Max number of students -->
-							<div class="form-group">
+							<div class="numStudents form-group">
 								<label for="numStudents">Maximum number of students you would like to mentor</label>
 								<select class="form-control" id="numStudents">
 									<option>1</option>
@@ -157,28 +162,28 @@
 									<option>7</option>
 								</select>
 							</div>
-							<!-- / This implements country/state/city dropdown from location.js.
-							<div class="form-group">
-								<label for="country">Country</label>
-								<select name="country" class="countries" id="countryId">
-									<option value="">Select Country</option>
-								</select>
-								<label for="state">State</label>
-								<select name="state" class="states" id="stateId">
-									<option value="">Select State</option>
-								</select>
-								<label for="city">City</label>
-								<select name="city" class="cities" id="cityId">
-									<option value="">Select City</option>
-								</select>
-							</div> -->
+							<!-- Location -->
+							<div class="location form-group">
+								<div class="container form-group col-sm-4" style="margin-right: 10px;">
+									<label for="city">City</label>
+									<input type="text" class="form-control" id="city" placeholder="City">
+								</div>
+								<div class="container form-group col-sm-4">
+									<label for="state">State/Province</label>
+									<input type="text" class="form-control" id="state" placeholder="State/Province">
+								</div>
+								<div class="container form-group col-sm-4" style="margin-left: 10px;">
+									<label for="Country">Country</label>
+									<input type="text" class="form-control" id="country" placeholder="Country">
+								</div>
+							</div>
 						</form>
 					</div>
 
 					<!-- Bottom of Form -->
 					<div class="container">
 						<form class="form-horizontal">
-							<div class="form-group">
+							<div class="bio form-group">
 								<!-- Short bio -->
 								<label for="bio" id="bio-text"></label>
 								<textarea class="form-control" rows="5" placeholder="Short bio..." id="bio"></textarea>

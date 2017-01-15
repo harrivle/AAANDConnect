@@ -14,7 +14,6 @@ To Figure Out:
     - Use ND hosting
     - Use Firebase Hosting
     - determine necessity of firebase info in html based on hosting
- - Prevent login of invalid email
  - Backup of database?
  - How to Match Students and Alumni
     - user done:
@@ -29,47 +28,23 @@ To Figure Out:
     - student who become alumni
     - alumni who are no longer active
  - Account Management
- - Database Setup
-    - if by name, then how to resolve same names
-    - perhaps then, by uid?
- - main.html
-    - UI
-    - update user info
- - Alumni Careers
-    - How many careers to let them have?
-    - Drop down List of Careers
-
+    - what should be in the user settings
+    - how to delete an "account"?
 
 To-Do:
  - fix login/out button with font-awesome icon
- - allow users to update info in the account settings page
  - prevent authentication of users of non-ND emails (although they cant use the app they are still added to the authenticated users db)
- - ?prevent users from directly going to main.html - currently gimicky
+ - ?prevent users from directly going to main.html - currently gimicky b/c it checks if they are authenticated. if not, they are redirected to index.html
  - ?put limitations on the openly visible details in firebase.js
  - Restrict users to @nd.edu and @alumni.nd.edu
     - ?later add smc and hocro?
- - !fix submit profile button and error checking!
- - !load up user data when entering update page!
  - finalize read/write rules based on functions and use
     - see google keep
-
+ - implement CSS Reset? see bookmarks
+ - new 404.html error page with submit error link?
+ - !security issues with scripts - check vulnerabilities with all scripts!
 
 Future:
  - Implement a populated map and show location of alumni
  - Implement data and analytics
-
-
-Database Structure:
-    alumni
-            Name
-            Careers
-            Location
-                City
-                State
-                Country
-            maxNumOfStudents
-    student
-            Name
-            Major
-            Location Preference
-            numOfMentors
+ 
