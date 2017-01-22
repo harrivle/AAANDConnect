@@ -36,6 +36,7 @@ To-Do:
  - prevent authentication of users of non-ND emails (although they cant use the app they are still added to the authenticated users db)
  - ?prevent users from directly going to main.html - currently gimicky b/c it checks if they are authenticated. if not, they are redirected to index.html
  - ?put limitations on the openly visible details in firebase.js
+ 	- or perhaps just do very strict writing rules in firebase console (pay particular attention to uid management and possibilities)
  - Restrict users to @nd.edu and @alumni.nd.edu
     - ?later add smc and hocro?
  - finalize read/write rules based on functions and use
