@@ -349,9 +349,17 @@ function viewRequests() {}
 
 // Update profile button is pressed.
 function updateProfile() {
+    // Show/hide elements
     $("#main-home").addClass('hidden');
     $("#update-profile-form").removeClass('hidden');
     $(".update-" + gradStatus + "-form").removeClass('hidden');
+
+    //? TODO: check how this loads the list of majors
+    // ifstatement for gradstatus
+    //$("#major1").click(function() {
+    //    $("#major1").load("txt/undergrad-majors.txt");
+    //});
+
 }
 
 // Function that returns true if argument is a number.

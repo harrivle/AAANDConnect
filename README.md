@@ -9,7 +9,7 @@ Javascript dependencies:
     boostrap.min.js: jQuery
 
 To Figure Out:
- - sometimes not properly loading javascript files?
+ - loading text data into a dropdown selection
  - How to Host
     - Use ND hosting
     - Use Firebase Hosting
@@ -47,4 +47,3 @@ To-Do:
 Future:
  - Implement a populated map and show location of alumni
  - Implement data and analytics
- 
