@@ -37,9 +37,6 @@ function loadMain() {
             // Make forms visible based on gradStatus.
             goMainHome();
 
-            // Determine which listeners to activate.
-            activateListeners();      // Activate based on student or alumni
-
             // Load user profile
             loadProfile();
 
@@ -66,22 +63,6 @@ function goMainHome() {
 
     // Show main button block.
     $("#main-home").removeClass('hidden');
-}
-
-// Activates listeners for main.html buttons.
-function activateListeners() {
-    // Activate specific listeners.
-    if (gradStatus === 'student') {
-        document.getElementById('view-mentors-btn').addEventListener("click", viewMentors);
-    } else if (gradStatus === 'alumni') {
-        document.getElementById('view-mentees-btn').addEventListener("click", viewStudents);
-        document.getElementById('view-requests-btn').addEventListener("click", viewRequests);
-    }
-
-    // Activate buttons used by both alumni and students
-    document.getElementById('update-' + gradStatus + '-btn').addEventListener("click", updateProfile);
-    document.getElementById('submitBtn').addEventListener("click", submitUpdateForm);
-    document.getElementById('returnBtn').addEventListener("click", goMainHome);
 }
 
 function loadProfile() {
@@ -343,9 +324,15 @@ function alumniWrite() {
 }
 
 // TODO:
-function viewMentors() {}
-function viewStudents() {}
-function viewRequests() {}
+function viewMentors() {
+  console.log("View Mentors button clicked.");
+}
+function viewStudents() {
+  console.log("View Students button clicked.");
+}
+function viewRequests() {
+  console.log("View Requests button clicked.");
+}
 
 // Update profile button is pressed.
 function updateProfile() {

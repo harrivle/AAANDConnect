@@ -4,7 +4,23 @@
  */
 
 // Run functions on window load.
-$(window).on("load", initLogButton);
+
+$(function() {
+  // Listening for auth state changes.
+  // [START authstatelistener]
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      // User is signed in.
+      console.log("User is signed in");
+      $("#quickstart-sign-in").text("Logout");
+    } else {
+      // User is signed out.
+      console.log("User is signed out");
+      $("#quickstart-sign-in").text("Loginwha");
+    }
+  });
+  // [END authstatelistener]
+});
 
 // Function called when clicking the Login/Logout button.
 // [START buttoncallback]
@@ -82,26 +98,7 @@ function toggleSignIn() {
 }
 // [END buttoncallback]
 
-// Listens for button toggle and updates text accordingly.
-function initLogButton() {
-    // Listening for auth state changes.
-    // [START authstatelistener]
-    firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-        // User is signed in.
-        console.log("User is signed in");
-        $("#quickstart-sign-in").text("Logout");
-    } else {
-        // User is signed out.
-        console.log("User is signed out");
-        $("#quickstart-sign-in").text("Login");
-    }
-    });
-    // [END authstatelistener]
 
-    // Listen for sign in toggle.
-    document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
-}
 
 // Function used to return current user graduation status based on their user.email.
 function returnGradStatus (email, emailVerified) {

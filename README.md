@@ -8,8 +8,19 @@ Javascript dependencies:
     main.js: jQuery and firebase
     boostrap.min.js: jQuery
 
+Current Flow of html
+-Begins with index.html
+--goes to login.js for logging in
+--if successful login, then index.html
+
+
+
+Text for Dropdown Menu
+1) With text file
+2) Through Firebase tree
+
+
 To Figure Out:
- - loading text data into a dropdown selection
  - How to Host
     - Use ND hosting
     - Use Firebase Hosting
