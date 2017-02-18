@@ -31,6 +31,7 @@ To Figure Out:
     - what should be in the user settings
     - how to delete an "account"?
 
+--
 To-Do:
  - fix login/out button with font-awesome icon
  - prevent authentication of users of non-ND emails (although they cant use the app they are still added to the authenticated users db)
