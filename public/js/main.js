@@ -52,14 +52,14 @@ function inputMajors() {
     console.log(lines[line]);
     var key = lines[line].replace(/\s+/g, '');
     var lineRef = database.ref('/majors/'+key);
-  lineRef.transaction(function(currentData) {
-    if (currentData === null) {
-      return { value: lines[line] };
-    } else {
-      console.log('Child already exists.');
-      return; // Abort the transaction.
-    }
-  });
+    lineRef.transaction(function(currentData) {
+      if (currentData === null) {
+        return { value: lines[line] };
+      } else {
+        console.log('Child already exists.');
+        return; // Abort the transaction.
+      }
+    });
   }
 }
 // Update main.html to be as it was initially.
@@ -83,13 +83,20 @@ function goMainHome() {
 function loadProfile() {
   //TODO fix this
 
-/* add in all options for majors dropdown here
   console.log("in load profile");
-     var x = document.getElementById("major1");
-  var option = document.createElement("option");
-  option.text = "Kiwi";
-  x.add(option);
-*/
+
+//majors list added in
+  var majorsRef = database.ref('/majors/');
+  majorsRef.once('value', function(snapshot) {
+    snapshot.forEach(function(childSnapshot) {
+      var childKey = childSnapshot.key;
+      var childData = childSnapshot.val();
+      $('#major1').append($('<option>' + childData.value + '</option>'));
+      $('#major2').append($('<option>' + childData.value + '</option>'));
+
+    });
+  });
+
   // Load information into profile
   if (gradStatus === 'student') {
     // Read from database.
