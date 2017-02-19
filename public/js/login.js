@@ -19,6 +19,7 @@ $(function() {
       $("#quickstart-sign-in").text("Loginwha");
     }
   });
+
   // [END authstatelistener]
 });
 
@@ -97,8 +98,6 @@ function toggleSignIn() {
     document.getElementById('quickstart-sign-in').disabled = true;
 }
 // [END buttoncallback]
-
-
 
 // Function used to return current user graduation status based on their user.email.
 function returnGradStatus (email, emailVerified) {
