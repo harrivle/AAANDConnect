@@ -41,27 +41,9 @@ $(function() {
   });
 
   //inputMajors();
-
+  //inputOccupations();
 });
 
-//used just to input majors into firebase tree
-function inputMajors() {
-  var majors = 'Accountancy\nAerospace Engineering\nAfricana Studies\nAmerican Studies\nAnthropology\nApplied and Computational Mathematics and Statistics\nArabic Studies\nArchitecture\nArt History\nBiochemistry\nBiological Sciences\nChemical Engineering\nChemistry\nChemistry/Business\nChemistry/Computing\nChinese\nCivil Engineering\nClassics\nComputer Engineering\nComputer Science\nDesign\nEconomics\nElectrical Engineering\nEnglish\nEnvironmental Earth Sciences\nEnvironmental Engineering\nEnvironmental Sciences\nFilm, Television, and Theatre\nFinance\nFrench and Francophone Studies\nGender Studies\nGerman\nGreek and Roman Civilization\nHistory\nInformation Technology, Analytics, and Operations\nInternational Economics\nIrish Language and Literature\nItalian Studies\nJapanese\nManagement & Organization\nMarketing\nMathematics\nMathematics\nMechanical Engineering\nMedieval Studies\nMusic\nNeuroscience and Behavior\nNeuroscience and Behavior\nPhilosophy and Theology (joint major)\nPhysics\nPhysics in Medicine\nPolitical Science\nPreprofessional Studies\nProgram of Liberal Studies\nPsychology\nRomance Languages and Literatures\nRussian\nScience-Business\nScience-Computing\nScience-Education\nSelf-Designed Majors\nSociology\nSpanish\nStatistics\nStudio Art\n';
-  var lines = majors.split('\n');
-  for(var line = 0; line < lines.length; line++){
-    console.log(lines[line]);
-    var key = lines[line].replace(/\s+/g, '');
-    var lineRef = database.ref('/majors/'+key);
-    lineRef.transaction(function(currentData) {
-      if (currentData === null) {
-        return { value: lines[line] };
-      } else {
-        console.log('Child already exists.');
-        return; // Abort the transaction.
-      }
-    });
-  }
-}
 // Update main.html to be as it was initially.
 function goMainHome() {
   // Make button blocks visible based on gradStatus.
@@ -81,21 +63,10 @@ function goMainHome() {
 }
 
 function loadProfile() {
-  //TODO fix this
 
   console.log("in load profile");
 
-//majors list added in
-  var majorsRef = database.ref('/majors/');
-  majorsRef.once('value', function(snapshot) {
-    snapshot.forEach(function(childSnapshot) {
-      var childKey = childSnapshot.key;
-      var childData = childSnapshot.val();
-      $('#major1').append($('<option>' + childData.value + '</option>'));
-      $('#major2').append($('<option>' + childData.value + '</option>'));
-
-    });
-  });
+  loadMajorsAndOccupations();
 
   // Load information into profile
   if (gradStatus === 'student') {
@@ -363,7 +334,9 @@ function viewStudents() {
 function viewRequests() {
   console.log("View Requests button clicked.");
 }
-
+function findMentors() {
+  console.log("Find Mentors button clicked.");
+}
 // Update profile button is pressed.
 function updateProfile() {
   // Show/hide elements
@@ -386,4 +359,65 @@ function cleanForm() {
   // Clear submit form by removing has-error or has-success for each form-group element.
   $('.form-group').removeClass('has-error');
   $('.form-group').removeClass('has-success');
+}
+
+function loadMajorsAndOccupations(){
+    //majors list added
+    var majorsRef = database.ref('/majors/');
+    majorsRef.once('value', function(snapshot) {
+      snapshot.forEach(function(childSnapshot) {
+        var childKey = childSnapshot.key;
+        var childData = childSnapshot.val();
+        $('#major1').append($('<option>' + childData.value + '</option>'));
+        $('#major2').append($('<option>' + childData.value + '</option>'));
+      });
+    });
+    //occupations list added
+    var occupationsRef = database.ref('/occupations/');
+    occupationsRef.once('value', function(snapshot) {
+      snapshot.forEach(function(childSnapshot) {
+        var childKey = childSnapshot.key;
+        var childData = childSnapshot.val();
+        $('#career1').append($('<option>' + childData.value + '</option>'));
+        $('#career2').append($('<option>' + childData.value + '</option>'));
+
+      });
+    });
+}
+
+//used just to input majors into firebase tree
+function inputMajors() {
+  var majors = 'Accountancy\nAerospace Engineering\nAfricana Studies\nAmerican Studies\nAnthropology\nApplied and Computational Mathematics and Statistics\nArabic Studies\nArchitecture\nArt History\nBiochemistry\nBiological Sciences\nChemical Engineering\nChemistry\nChemistry/Business\nChemistry/Computing\nChinese\nCivil Engineering\nClassics\nComputer Engineering\nComputer Science\nDesign\nEconomics\nElectrical Engineering\nEnglish\nEnvironmental Earth Sciences\nEnvironmental Engineering\nEnvironmental Sciences\nFilm, Television, and Theatre\nFinance\nFrench and Francophone Studies\nGender Studies\nGerman\nGreek and Roman Civilization\nHistory\nInformation Technology, Analytics, and Operations\nInternational Economics\nIrish Language and Literature\nItalian Studies\nJapanese\nManagement & Organization\nMarketing\nMathematics\nMathematics\nMechanical Engineering\nMedieval Studies\nMusic\nNeuroscience and Behavior\nNeuroscience and Behavior\nPhilosophy and Theology (joint major)\nPhysics\nPhysics in Medicine\nPolitical Science\nPreprofessional Studies\nProgram of Liberal Studies\nPsychology\nRomance Languages and Literatures\nRussian\nScience-Business\nScience-Computing\nScience-Education\nSelf-Designed Majors\nSociology\nSpanish\nStatistics\nStudio Art\n';
+  var lines = majors.split('\n');
+  for(var line = 0; line < lines.length; line++){
+    console.log(lines[line]);
+    var key = lines[line].replace(/\s+/g, '');
+    var lineRef = database.ref('/majors/'+key);
+    lineRef.transaction(function(currentData) {
+      if (currentData === null) {
+        return { value: lines[line] };
+      } else {
+        console.log('Child already exists.');
+        return; // Abort the transaction.
+      }
+    });
+  }
+}
+
+function inputOccupations(){
+  var occupations = "Architecture and Engineering\nArts, Design, Entertainment, Sports, and Media\nBuilding and Grounds Cleaning and Maintenance\nBusiness and Financial Operations\nCommunity and Social Service\nComputer and Mathematical\nConstruction and Extraction\nEducation, Training, and Library\nFarming, Fishing, and Forestry\nFood Preparation and Serving\nHealthcare Practitioners and Technical\nHealthcare Support\nInstallation, Maintenance, and Repair\nLegal\nLife, Physical, and Social Science\nManagement\nMilitary Specific\nOffice and Administrative Support\nPersonal Care and Service\nProduction/Manufacturing\nProtective Service\nSales and Related\nTransportation and Material Moving\n";
+  var lines = occupations.split('\n');
+  for(var line = 0; line < lines.length; line++){
+    console.log(lines[line]);
+    var key = lines[line].replace(/\s+/g, '');
+    var lineRef = database.ref('/occupations/'+key);
+    lineRef.transaction(function(currentData) {
+      if (currentData === null) {
+        return { value: lines[line] };
+      } else {
+        console.log('Child already exists.');
+        return; // Abort the transaction.
+      }
+    });
+  }
 }

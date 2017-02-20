@@ -95,7 +95,7 @@ function toggleSignIn() {
         });
         // [END signout]
     }
-    document.getElementById('quickstart-sign-in').disabled = true;
+    $('#quickstart-sign-in').disabled = true;
 }
 // [END buttoncallback]
 

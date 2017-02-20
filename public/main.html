@@ -43,7 +43,7 @@
 							<li role="separator" class="divider"></li>
 							<li class="dropdown-header">Options</li>
 							<li><a href="account-settings.html"><i class="fa fa-cog"></i>&nbsp;Account Settings</a></li>
-							<li><a href="#" id="quickstart-sign-in"><i class="fa fa-sign-out"></i>&nbsp;</a></li>
+							<li><a href="#" id="quickstart-sign-in" onclick="toggleSignIn()"><i class="fa fa-sign-out"></i>&nbsp;</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -63,7 +63,7 @@
 				</div>
 				<!-- Student button block -->
 				<div class="student-btn-block hidden well center-block" style=max-width:600px>
-					<button type="button" class="btn btn-primary btn-lg btn-block" id="find-mentors-btn">Find Mentors</button>
+					<button type="button" onclick="findMentors()" class="btn btn-primary btn-lg btn-block" id="find-mentors-btn">Find Mentors</button>
 					<button type="button" onclick="viewMentors()" class="btn btn-primary btn-lg btn-block" id="view-mentors-btn">View Mentors</button>
 					<button type="button" onclick="updateProfile()"class="btn btn-primary btn-lg btn-block" id="update-student-btn">Update Profile</button>
 				</div>
@@ -121,21 +121,11 @@
 						<div class="form-group">
 							<label for="career1">Primary career</label>
 							<select class="form-control" id="career1">
-								<option>Not Selected</option>
-								<option>Doctor</option>
-								<option>Lawyer</option>
-								<option>Dentist</option>
-								<option>Psh there can't be any other option</option>
 							</select>
 						</div>
 						<div class="form-group">
 							<label for="career2">Secondary career</label>
 							<select class="form-control" id="career2">
-								<option>Not Selected</option>
-								<option>Doctor</option>
-								<option>Lawyer</option>
-								<option>Dentist</option>
-								<option>Psh there can't be any other option</option>
 							</select>
 						</div>
 						<!-- Max number of students -->
