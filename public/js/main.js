@@ -336,6 +336,7 @@ function viewRequests() {
 }
 function findMentors() {
   console.log("Find Mentors button clicked.");
+  window.location.href = "table.html";
 }
 // Update profile button is pressed.
 function updateProfile() {
