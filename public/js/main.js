@@ -340,6 +340,7 @@ function findMentors() {
 }
 // Update profile button is pressed.
 function updateProfile() {
+  window.location.href = "updateForm.html";
   // Show/hide elements
   $("#main-home").addClass('hidden');
   $("#update-profile-form").removeClass('hidden');

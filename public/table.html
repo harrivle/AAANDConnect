@@ -14,9 +14,10 @@
 	<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
 	<!-- SweetAlert -->
 	<link rel="stylesheet" href="sweetalert/dist/sweetalert.css">
+	<link rel="stylesheet" href="css/jquery.dataTables.css">
+
 	<!-- Primary stylesheet -->
 	<link rel="stylesheet" href="css/stylesheet.css" />
-	<link rel="stylesheet" href="css/bootstrap-table.css" />
 
 </head>
 
@@ -57,20 +58,24 @@
 	<div class="main">
 		<div class="container" style="padding: 20px 0;">
 			<div class="page-header col-sm-12">
-				<h1>Coming in the near future...</h1>
+				<h1>Find Mentors</h1>
+				<table id="table_id" class="display">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Graduation Year</th>
+							<th>Career</th>
+							<th>City</th>
+							<th>State</th>
+						</tr>
+					</thead>
+					<tbody id="table_body">
+					</tbody>
+				</table>
 			</div>
-			<table id="table">
-    <thead>
-    <tr>
-        <th data-field="name">Name</th>
-        <th data-field="gradYear">Graduation Year</th>
-        <th data-field="career1">Career</th>
-        <th data-field="city">City</th>
-				<th data-field="state">State</th>
-    </tr>
-    </thead>
 		</div>
 	</div>
+
 
 	<!-- Firebase -->
 	<script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
@@ -81,8 +86,8 @@
 	<script src="sweetalert/dist/sweetalert.min.js"></script>
 	<!-- Google Login Quickstart script -->
 	<script src="js/login.js"></script>
-	<script src="js/bootstrap-table.js"></script>
 	<script src="js/table.js"></script>
+	<script src="js/jquery.dataTables.js"></script>
 	<!-- Latest compiled and minified JavaScript for bootstrap (dependent on jquery) -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
